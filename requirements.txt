@@ -2,4 +2,5 @@ pandas
 numpy
 Flask
 opencv-python
+scikit-learn
 -e .

@@ -13,17 +13,13 @@ def get_requirements(file_path: str) -> List[str]:
             requirements.remove(HYPEN_E_DOT)
     return requirements
 
-
-
-
 # perform setup parameters
 setup(
     name="Project_1",
-    version=0.0.1,
+    version="0.0.1",
     author="Shayan Kumar",
     author_email="shayankumar765@gmail.com",
-    # install_requires = ['pandas','numpy','sklearn'],
-    install_requires = get_requirements("requirements.txt")
-    packages=find_packages()
+    # install_requires=['pandas', 'numpy', 'sklearn'],
+    install_requires=get_requirements("requirements.txt"),
+    packages=find_packages()  # Add this line
 )
-

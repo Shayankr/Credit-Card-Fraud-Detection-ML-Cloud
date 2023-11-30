@@ -1,6 +1,8 @@
 pandas
 numpy
+imbalaned-learn
 Flask
-opencv-python
 scikit-learn
+seaborn
+xgboost
 -e .

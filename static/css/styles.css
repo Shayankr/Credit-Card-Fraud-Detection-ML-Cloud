@@ -1,0 +1,152 @@
+/* Reset some default browser styles */
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    background-image: url('background_image.jpg'); /* Add your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    margin-top: auto;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: #fff;
+    padding: 15px 0;
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+}
+
+.content {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.description {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto 10px auto; /*Apply margin on top and bottom */
+}
+
+.explore-button a {
+    display: block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: large;
+}
+
+/* .card-image img {
+    display: inline;
+    max-width: 300px;
+} */
+
+.form-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+    margin: 20px auto;
+    max-width: 50%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-row {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.predict-button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 12px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    /* font-size: 18px; Adjust font size as needed */
+}
+
+.prediction-result h3 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 26px; /* Adjust the font size as needed */
+    color: black;
+    background-color: #f2f2f2; /* Add your desired background color */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-image img {
+        max-width: 100%;
+    }
+}

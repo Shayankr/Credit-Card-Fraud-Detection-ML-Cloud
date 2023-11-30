@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author"  content="SHAYAN KUMAR SHAYANKUMAR765@GMAIL.COM">
+    <meta name="description" content="Credit Card Fraud Detection, Data Science and  Machine Learning Project, AUGUST 2023">
+    <meta name=url content=https://github.com/Shayankr/Credit_Card_Fraud_Detection>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Credit Card Fraud Detection Project</title>
+    <link rel="icon" href="{{ url_for('static', filename = 'images/icon.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}" >
+    
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename = 'images/background_image.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <header class="header">
+        <div style="display: block;">
+            <h1 style="font-size: 40px; padding: 12px;">Credit Card Fraud Detection Project</h1>
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="container">
+
+            <div class="content">
+
+                <div class="explore-button" style="display: inline-block;">
+                    <a href="{{ url_for('data_analysis') }}" target="_blank">Explore Original DataSet Analysis Report</a>
+                </div>
+    
+                <div class="description">
+                    <fieldset>
+                        <legend style="text-align: center;"><h2>Project Description:</h2></legend>
+                        <p>Welcome to the Credit Card Fraud Detection Project. This project aims to detect fraudulent credit card transactions using machine learning techniques.</p>
+                        <p>Fraud is a major problem for credit card companies, both because of the large volume of transactions that are completed each day and because many fraudulent transactions look a lot like normal transactions.</p>
+                        <p>Identifying fraudulent credit card transactions is a common type of imbalanced binary classification where the focus is on the positive class (is fraud) class.</p>
+                    </fieldset>
+                </div>
+
+                <div class="explore-button" style="display: inline-block;">
+                    <a href="https://github.com/Shayankr/Credit_Card_Fraud_Detection" target="_blank" style="background-color: rgb(0, 119, 255);">Go to GitHub Code</a>
+                </div>
+
+                <div style="display: block; color: #fff9f9; text-align: center; margin-top: 50px;">
+                    <h3>Enter the following values for Credit Card Fraud Prediction:</h3>
+                </div>
+    
+                <div class="form-section">
+                    
+                    <form action="{{ url_for('predict_datapoint') }}" method="post">
+                        <fieldset>
+                            <legend style="text-align: center;"><h2>Enter Feature variables:</h2></legend>
+                            
+                            <div class="input-row">
+                                <label for="V1">Feature_1(V1):</label>
+                                <input type="number" name="V1" step="0.01" min="-16.76" max="2.34" required>
+                            </div>
+                            
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V2">Feature_2(V2):</label>
+                                <input type="number" name="V2" step="0.01" min="-15.13" max="7.85" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V3">Feature_3(V3):</label>
+                                <input type="number" name="V3" step="0.01" min="-9.875" max="3.39" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V4">Feature_4(V4):</label>
+                                <input type="number" name="V4" step="0.01" min="-4.25" max="6.24" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V5">Feature_5(V5):</label>
+                                <input type="number" name="V5" step="0.01" min="-9.41" max="8.07" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V6">Feature_6(V6):</label>
+                                <input type="number" name="V6" step="0.01" min="-5.29" max="6.16" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V7">Feature_7(V7):</label>
+                                <input type="number" name="V7" step="0.01" min="-9.37" max="7.97" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V8">Feature_8(V8):</label>
+                                <input type="number" name="V8" step="0.01" min="-13.10" max="6.14" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V9">Feature_9(V9):</label>
+                                <input type="number" name="V9" step="0.01" min="-3.31" max="5.96" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V10">Feature_10:</label>
+                                <input type="number" name="V10" step="0.01" min="-5.21" max="9.13" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V11">Feature_11:</label>
+                                <input type="number" name="V11" step="0.01" min="-2.74" max="3.84" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V12">Feature_12:</label>
+                                <input type="number" name="V12" step="0.01" min="-5.70" max="2.74" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V13">Feature_13:</label>
+                                <input type="number" name="V13" step="0.01" min="-3.10" max="3.24" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V14">Feature_14:</label>
+                                <input type="number" name="V14" step="0.01" min="-7.34" max="3.87" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V15">Feature_15:</label>
+                                <input type="number" name="V15" step="0.01" min="-3.19" max="2.63" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V16">Feature_16:</label>
+                                <input type="number" name="V16" step="0.01" min="-4.03" max="2.71" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V17">Feature_17:</label>
+                                <input type="number" name="V17" step="0.01" min="-5.70" max="4.05" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V18">Feature_18:</label>
+                                <input type="number" name="V18" step="0.01" min="-3.35" max="2.67" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V19">Feature_19:</label>
+                                <input type="number" name="V19" step="0.01" min="-2.98" max="3.39" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V20">Feature_20:</label>
+                                <input type="number" name="V20" step="0.01" min="-6.62" max="5.81" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="feature_2">Feature_21:</label>
+                                <input type="number" name="feature_2" step="0.01" min="-4.25" max="2.14" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V22">Feature_22:</label>
+                                <input type="number" name="V22" step="0.01" min="-3.12" max="2.26" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V23">Feature_23:</label>
+                                <input type="number" name="V23" step="0.01" min="-5.45" max="4.76" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V24">Feature_24:</label>
+                                <input type="number" name="V24" step="0.01" min="-2.00" max="1.25" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V25">Feature_25:</label>
+                                <input type="number" name="V25" step="0.01" min="-2.40" max="1.87" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V26">Feature_26:</label>
+                                <input type="number" name="V26" step="0.01" min="-1.28" max="2.25" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V27">Feature_27:</label>
+                                <input type="number" name="V27" step="0.01" min="-3.82" max="2.61" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="V28">Feature_28:</label>
+                                <input type="number" name="V28" step="0.01" min="-2.63" max="2.10" required>
+                            </div>
+
+                            <div class="input-row">
+                                <!-- Add other input field for features -->
+                                <label for="Amount">Feature_29(Amount):</label>
+                                <input type="number" name="Amount" step="0.01" min="0.00" max="3000.00" required>
+                            </div>
+                            
+                            <!-- <div class="input-row">
+                                <label for="categorical_feature"> Categorical Feature:</label>
+                                <select name="categorical_feature" required>
+                                    <option value="value_1"> Value_1</option>
+                                    <option value="value_2"> Value_2</option>
+                                    <option value="value_3"> Value_3</option>
+                                </select>
+                            </div> -->
+                            
+                            <button type="submit" class="predict-button">Click to Predict FRAUD / NOT_FROUD!</button>
+                        </fieldset>
+                    </form>
+                
+                    <div class="prediction-result">
+                        <h3>1 means: Fraud and 0 means: Not Fraud</h3>
+                        <h3>Prediction Result: It is   {{final_result}}</h3>
+                    </div>
+                </div>
+                
+                
+
+                <!-- <div class="card-image">
+                    <img src="{{ url_for('static', filename = 'images/credit_card_demo.jpg') }}" alt="Credit Card Image" style="display: block; margin: auto;" />
+                </div> -->
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class = "copyright">
+            <p>&copy; 2023 Shayan Kumar. All rights reserved.</p>
+        </div>
+        <div class="contact">
+            Contact: shayankumar765@gmail.com
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>

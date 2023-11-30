@@ -6,6 +6,7 @@ from src.exception import CustomException
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import SMOTE
 
 # Initialize the Data Ingestion Configuration:
 from dataclasses import dataclass
@@ -27,13 +28,25 @@ class DataIngestion:
 
         try:
             df = pd.read_csv(os.path.join('notebooks/data','creditcard.csv'))
+            df = df.drop("Time", axis = 1)
             logging.info('Dataset read as pandas DataFrame')
 
-            os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
-            df.to_csv(self.ingestion_config.raw_data_path)
+            # os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
+            # df.to_csv(self.ingestion_config.raw_data_path)
 
-            logging.info('Raw data is created')
+            # logging.info('Raw data is created')
 
+            # Drop duplicates:
+            df = df.drop_duplicates()
+            df.reset_index(inplace=True, drop= True)
+
+            # Apply SMOTE (Synthetic Minority Oversampling Technique)
+            smote_oversample = SMOTE(random_state=42)
+            X, y = smote_oversample.fit_resample(df.drop("Class", axis = 1), df["Class"])
+
+            df = pd.concat((X, y), axis = 1)
+
+            # Split data into train and test
             train_set, test_set = train_test_split(df, test_size=0.30, random_state=42)
 
             train_set.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
@@ -50,4 +63,4 @@ class DataIngestion:
             logging.info('Exception occured at Data Ingestion Stage')
             raise CustomException(e, sys)
         
-#
+####################################################################################################################################
